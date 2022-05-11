@@ -1,0 +1,16 @@
+﻿@model IEnumerable<BTL_Web_Cinema.Models.Entities.LichChieu>
+@foreach (var i in Model)
+{
+    if (Session["UserName"] != null)
+    {
+        @Html.ActionLink(@i.CaChieu1.TenCa,"MuaVe", new { MaSC = i.MaSuatChieu })
+        <br />
+    }
+    else
+    {
+        <a href="~/Users/SignIn">@i.CaChieu1.TenCa</a>
+        <br />
+    }
+
+}
+

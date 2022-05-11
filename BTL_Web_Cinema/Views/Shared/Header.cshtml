@@ -1,0 +1,66 @@
+﻿
+  <div class="header">
+        <div class="header_top">
+            <div class="logo">
+                <h1>Rạp chiếu phim</h1>
+            </div>
+            <div class="cart">
+                <p style="font-style:italic;font-size:12px">
+                    @if (Session["UserName"] != null)
+                    {
+                        <span>Tài khoản: @Session["UserName"]</span>
+                        <br />
+                        <span> <a href="~/Users/Logout">Đăng xuất</a></span> }
+                     else
+                     {
+                        <span>
+                            <a href="~/Users/SignIn">Đăng nhập</a>
+                        </span>
+                        <span><a href="~/Users/SignUp">/ Đăng ký</a></span>}
+                </p>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+    <div class="header_bottom" style="background-color:red;font-size:24px;">
+        <div class="menu">
+            <ul>
+                <li><a href="~/Home/index">PHIM</a></li>
+                <li><a href="~/LichChieux/DatVe">LỊCH CHIẾU</a></li>
+                    @if (Session["UserName"] != null)
+                    {
+                        <li><a href="~/Home/MyTiket">RẠP CỦA TÔI</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="~/Users/SignIn">RẠP CỦA TÔI</a></li>
+                    }
+            </ul>
+        </div>
+        <div class="search_box">
+            <form>
+                <input id="txtsp" type="text" value="" >
+                <input id="btnS" type="button" class="" value="">
+               
+            </form>
+        </div>
+        <div class="clear"> </div>
+    </div>
+
+
+
+<script>
+    $("#btnS").click(function () {
+        var name = $("#txtsp").attr("value");
+        $.ajax({
+            url: "RenderMovieName",
+            data: { mName: name },
+            success: function (response) {
+               
+                $("div.content").html(response);
+            }
+        });
+    });
+</script>    
+

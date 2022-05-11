@@ -1,0 +1,53 @@
+﻿@model IEnumerable<BTL_Web_Cinema.Models.Entities.Ve>
+
+@{
+    ViewBag.Title = "MyTiket";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Rạp của tôi</h2>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LichChieu.MaSuatChieu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoGhe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LichChieu.PhongChieu.TenPhong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LichChieu.Phim.TenPhim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LichChieu.TienVe)
+        </th>
+    </tr>
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.LichChieu.MaSuatChieu)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.User.UserName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SoGhe)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LichChieu.PhongChieu.TenPhong)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LichChieu.Phim.TenPhim)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LichChieu.TienVe)
+    </td>
+</tr>
+}
+
+</table>

@@ -1,0 +1,43 @@
+﻿<html>
+<head>
+    <meta name="viewport" content="with=device-with" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <title>Login</title>
+    <style>
+        .khung {
+            margin: auto;
+            max-width: 500px;
+            min-height: 300px;
+            border: 1px solid #000000;
+            margin-top:5px;
+            padding:50px;
+        }
+    </style>
+</head>
+<body>
+
+    @using (Html.BeginForm("Login", "Auth", FormMethod.Post))
+    {
+    <div class="khung">
+        <h1 class="text-center">Đăng nhập</h1>
+        <div class="form-group">
+            <label>Tài khoản:</label>
+            <input type="text" name="username" required class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Mật khẩu:</label>
+            <input type="password" name="password"  required class="form-control" />
+        </div>
+        <div class="form-group text-right">
+            <button type="submit" class="btn btn-success">Đăng nhập</button>
+        </div>
+
+       <div class="form-group">
+            @ViewBag.Eror
+        </div>
+
+        </div>
+        }
+
+</body>
+</html>

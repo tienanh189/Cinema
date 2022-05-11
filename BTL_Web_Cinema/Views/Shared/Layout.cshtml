@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Cinema</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Content/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/startstop-slider.js"></script>
+   
+</head>
+<body>
+	<!-- Begin Wrap -->
+    <div class="wrap">
+        <!-- Begin Header -->
+        @Html.Partial("Header")
+        <!-- End Header -->
+        <!-- Begin Main -->
+        <div class="main">
+            <div class="content">
+                @RenderBody()             
+            </div>
+        </div> 
+        <!-- End Main -->
+    </div>
+	<!-- End Wrap -->
+	<!-- Begin Footer -->
+	@Html.Partial("Footer")
+
+	<!-- End Footer -->
+</body>
+</html>
+

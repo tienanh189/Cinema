@@ -1,0 +1,43 @@
+﻿@model BTL_Web_Cinema.Models.Entities.Ve
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/LayOut_Admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ve</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LichChieu.MaSuatChieu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LichChieu.MaSuatChieu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoGhe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoGhe)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaVe }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

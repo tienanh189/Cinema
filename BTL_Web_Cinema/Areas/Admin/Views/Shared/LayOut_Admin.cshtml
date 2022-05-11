@@ -1,0 +1,55 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Admin</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="~/Content/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/startstop-slider.js"></script>
+    <script src="~/Content/js/ShowImage.js"></script>
+</head>
+<body>
+<!-- Begin Wrap -->
+<div class="wrap">
+	<!-- Begin Header -->
+	@Html.Partial("Header_Admin")
+    <!-- End Header -->
+    <!-- Begin Main -->
+    <div class="main">
+    @RenderBody()
+	</div>
+    <!-- End Main -->
+</div>
+<!-- End Wrap -->
+<!-- Begin Footer -->
+@*<div class="footer">
+   	  <div class="wrap">	
+	     <div class="section group">
+				<div class="col_1_of_4 span_1_of_4">
+						<h4>Thông tin</h4>
+						<ul>
+						
+						<li><a href="contact.html">Dịch vụ khách hàng</a></li>
+						
+					
+						</ul>
+					</div>
+				
+				<div class="col_1_of_4 span_1_of_4">
+					<h4>Liên hệ</h4>
+                    <ul>
+                        <li><span>Số điện thoại: 1900 6017</span></li>
+                        <li><span>Email: hoidap@cgv.vn</span></li>
+                    </ul>
+				</div>
+			</div>			
+        </div>
+</div>*@
+<!-- End Footer -->
+</body>
+</html>
+

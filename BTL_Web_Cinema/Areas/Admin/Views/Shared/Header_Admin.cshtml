@@ -1,0 +1,29 @@
+﻿<div class="header">
+    <div class="header_top">
+        <div class="logo">
+            <h1 style="font-size:50px">ADMIN</h1>
+        </div>
+        <div class="cart">
+            <p> 
+                @Session["UserAdmin"]
+                <br />
+                <a href="@Url.Action("Logout", "Auth")">Đăng xuất</a>                
+            </p>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="header_bottom" style="font-size:24px">
+        <div class="menu">
+            <ul>
+                <li><a href="~/Admin/Phims/Index">Phim</a></li>
+                <li><a href="~/Admin/Ves/Index">Vé</a></li>
+                <li><a href="~/Admin/LichChieux/Index">Lịch Chiếu</a></li>
+                <li><a href="~/Admin/Users/Index">Người dùng</a></li>
+                <li><a href="~/Admin/TheLoais/Index">Thể loại</a></li>
+                <li><a href="~/Admin/PhongChieux/Index">Phòng chiếu</a></li>
+                <li><a href="~/Admin/CaChieux/Index">Ca chiếu</a></li>
+            </ul>
+        </div>      
+        <div class="clear"></div>
+    </div>
+</div>

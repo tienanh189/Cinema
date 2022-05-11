@@ -1,0 +1,64 @@
+﻿@model BTL_Web_Cinema.Models.Entities.Phim
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/LayOut_Admin.cshtml";
+}
+
+<h2>XÓA PHIM</h2>
+
+<h3>BẠN CÓ CHẮC CHẮN MUỐN XÓA KHÔNG?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TheLoai.TenTheLoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TheLoai.TenTheLoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenPhim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenPhim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTaPhim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTaPhim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiaNhapPhim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaNhapPhim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anh)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Trở về", "Index")
+        </div>
+    }
+</div>

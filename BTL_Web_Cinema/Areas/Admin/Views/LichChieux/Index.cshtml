@@ -1,0 +1,58 @@
+﻿@model IEnumerable<BTL_Web_Cinema.Models.Entities.LichChieu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/LayOut_Admin.cshtml";
+}
+
+<h2>LỊCH CHIẾU</h2>
+
+<p>
+    @Html.ActionLink("THÊM MỚI", "Create")
+</p>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CaChieu1.TenCa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phim.TenPhim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhongChieu.TenPhong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayChieu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TienVe)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaChieu1.TenCa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phim.TenPhim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhongChieu.TenPhong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayChieu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TienVe)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaSuatChieu }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaSuatChieu }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaSuatChieu })
+        </td>
+    </tr>
+}
+
+</table>

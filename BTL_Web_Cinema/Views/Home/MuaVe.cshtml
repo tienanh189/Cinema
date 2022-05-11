@@ -1,0 +1,44 @@
+﻿@model BTL_Web_Cinema.Models.Entities.Ve
+@{
+    ViewBag.Title = "MuaVe";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Mua vé </h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.MaSuatChieu, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MaSuatChieu, new{@Value = @ViewBag.MaSC })
+                @Html.ValidationMessageFor(model => model.MaSuatChieu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SoGhe, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 " style="width:20%">
+                @Html.EditorFor(model => model.SoGhe, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SoGhe, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Mua vé" class="btn btn-default" />
+            </div>
+        </div>
+        <div class="form-group">
+            @if (ViewBag.tb != null)
+            {
+                <p style="color:red;margin-left:20%">@ViewBag.tb</p>
+            }
+        </div>
+    </div>
+}

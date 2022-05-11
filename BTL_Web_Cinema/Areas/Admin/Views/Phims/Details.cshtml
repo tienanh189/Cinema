@@ -1,0 +1,58 @@
+﻿@model BTL_Web_Cinema.Models.Entities.Phim
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/LayOut_Admin.cshtml";
+}
+
+<h2>CHI TIẾT THÔNG TIN VỀ PHIM</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TheLoai.TenTheLoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TheLoai.TenTheLoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenPhim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenPhim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTaPhim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTaPhim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiaNhapPhim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaNhapPhim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anh)
+        </dt>
+
+        <dd>         
+            <img src="~/Content/Images/@Url.Content(Model.Anh)" style="width:180px;height:200px" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaPhim }) |
+    @Html.ActionLink("Trở về", "Index")
+</p>
